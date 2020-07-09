@@ -6,7 +6,7 @@
 /*   By: gekang <gekang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 09:53:02 by gekang            #+#    #+#             */
-/*   Updated: 2020/07/09 16:05:50 by gekang           ###   ########.fr       */
+/*   Updated: 2020/07/09 16:15:11 by gekang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int			getlen(char *str)
 
 char		*ft_matched_str(char *str, char *to_find, int i)
 {
-	int 	temp;
+	int		temp;
 	int		j;
 	char	*result;
 
@@ -56,8 +56,10 @@ char		*ft_strstr(char *str, char *to_find)
 		if (str[i] == to_find[0])
 		{
 			if (ft_matched_str(str, to_find, i))
+			{
 				return (ft_matched_str(str, to_find, i));
 				break ;
+			}
 		}
 		i++;
 	}
