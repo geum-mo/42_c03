@@ -6,7 +6,7 @@
 /*   By: gekang <gekang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 09:53:02 by gekang            #+#    #+#             */
-/*   Updated: 2020/07/09 12:11:05 by gekang           ###   ########.fr       */
+/*   Updated: 2020/07/09 12:17:48 by gekang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,11 @@ char		*ft_strstr(char *str, char *to_find)
 		while (str[j] != '\0')
 		{
 			if (str[j] == to_find[i])
+			{
 				if (ft_matched_str(str, to_find, j))
 					return (ft_matched_str(str, to_find, j));
-				else
-					j++;
+				j++;
+			}
 		}
 		if (i == 0)
 			return (0);
