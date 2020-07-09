@@ -6,13 +6,13 @@
 /*   By: gekang <gekang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 09:53:02 by gekang            #+#    #+#             */
-/*   Updated: 2020/07/09 12:17:48 by gekang           ###   ########.fr       */
+/*   Updated: 2020/07/09 16:05:50 by gekang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int			ft_getlen(char *str)
+int			getlen(char *str)
 {
-	int		i;
+	int i;
 
 	i = 0;
 	while (str[i] != '\0')
@@ -22,17 +22,19 @@ int			ft_getlen(char *str)
 	return (i);
 }
 
-char		*ft_matched_str(char *str, char *to_find, int j)
+char		*ft_matched_str(char *str, char *to_find, int i)
 {
-	int		i;
+	int 	temp;
+	int		j;
 	char	*result;
 
-	i = 0;
-	while (to_find[i] != '\0')
+	temp = i;
+	j = 0;
+	while (to_find[j] != '\0')
 	{
-		if (str[i] == '\0')
-			return (0);
-		if (str[j + 1] == to_find[i + 1])
+		if (to_find[j + 1] == '\0')
+			break ;
+		if (str[i + 1] == to_find[j + 1])
 		{
 			i++;
 			j++;
@@ -40,33 +42,26 @@ char		*ft_matched_str(char *str, char *to_find, int j)
 		}
 		return (0);
 	}
-	result = &str[i];
+	result = &str[temp];
 	return (result);
 }
 
 char		*ft_strstr(char *str, char *to_find)
 {
 	int		i;
-	int		j;
 
 	i = 0;
-	j = i;
-	while (to_find[i] != '\0')
+	while (str[i] != '\0')
 	{
-		while (str[j] != '\0')
+		if (str[i] == to_find[0])
 		{
-			if (str[j] == to_find[i])
-			{
-				if (ft_matched_str(str, to_find, j))
-					return (ft_matched_str(str, to_find, j));
-				j++;
-			}
+			if (ft_matched_str(str, to_find, i))
+				return (ft_matched_str(str, to_find, i));
+				break ;
 		}
-		if (i == 0)
-			return (0);
 		i++;
 	}
-	if (to_find[i] == '\0')
+	if (to_find[0] == '\0')
 		return (str);
 	return (0);
 }

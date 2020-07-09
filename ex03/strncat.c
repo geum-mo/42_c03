@@ -6,7 +6,7 @@
 /*   By: gekang <gekang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 09:29:05 by gekang            #+#    #+#             */
-/*   Updated: 2020/07/09 11:52:15 by gekang           ###   ########.fr       */
+/*   Updated: 2020/07/09 12:19:09 by gekang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char				*ft_strncat(char *dest, char *src, unsigned int n)
 	while (src[i] != '\0')
 	{
 		if (i == n)
-			break;
+			break ;
 		dest[dstsize + i] = src[i];
 		i++;
 	}
